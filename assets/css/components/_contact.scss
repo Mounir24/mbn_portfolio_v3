@@ -1,0 +1,138 @@
+/*------ FUNCTIONS FOR DISPLAYING --------*/
+
+@mixin displayed($pos) {
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+}
+
+@mixin fonts($nm, $fw, $fs) {
+    font-family: $nm;
+    font-size: $fs;
+    font-weight: $fw;
+    text-transform: uppercase;
+}
+
+@mixin buttons($rounded, $bg) {
+    padding: 13px 34px;
+    border: none;
+    outline: none;
+    background: $bg;
+    border-radius: $rounded;
+}
+
+@mixin revealAnim($speed) {
+    transition: all $speed ease-in-out;
+    animation: opa $speed ease-in-out;
+    @keyframes opa {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+
+/*======== START STYLING CONTACT PAGE =======*/
+
+.show__case {
+    min-height: 80vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .img__holder2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        img {
+            width: 100%;
+            object-fit: cover;
+            background-position: center;
+        }
+    }
+    .bg-wave2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        /*@include displayed(flex-start);
+        align-content: flex-end;*/
+    }
+    .contact__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        @include displayed(flex-start);
+        padding: 3.5rem;
+        .page__label {
+            padding: 4rem;
+            /*@include displayed(center);*/
+            .area__title {
+                @include fonts($russOne, 500, 60px);
+                color: #FFF;
+                letter-spacing: 0.3rem;
+            }
+        }
+    }
+}
+
+.contact {
+    min-height: 100vh;
+    background: #FFF;
+    .contact__container {
+        margin: auto;
+        width: 500px;
+        text-align: center;
+        .contact__label {
+            @include fonts($Rajdhani, 500, 17px);
+            color: $color-title;
+            margin-bottom: 1.2rem;
+        }
+        .contact__title {
+            @include fonts($russOne, 500, 29px);
+            color: $color-title;
+            letter-spacing: 0.1rem;
+        }
+        .form__container {
+            margin-top: 2.5rem;
+            .f-input {
+                border-radius: 24px;
+                outline: none;
+                border: none;
+                text-align: center;
+                background: $section-bg-light;
+                @include fonts($russOne, 500, 13px);
+                color: #000;
+            }
+            .form__btn {
+                @include buttons(24px, $first-color);
+                @include fonts($Rajdhani, 500, 17px);
+                color: #FFF;
+                padding: 10px 70px !important;
+                letter-spacing: 2.5px;
+                margin-top: 1.6rem;
+                box-shadow: $ShadowEffect;
+                /*transition: all 0.3s ease-in-out;*/
+            }
+        }
+    }
+    .map__container {
+        width: 100%;
+        margin: auto;
+        @include displayed(center);
+        iframe {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+
+/*======== END STYLING CONTACT PAGE =======*/

@@ -1,0 +1,196 @@
+/*------ FUNCTIONS FOR DISPLAYING --------*/
+
+@mixin displayed($pos) {
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+}
+
+@mixin fonts($nm, $fw, $fs) {
+    font-family: $nm;
+    font-size: $fs;
+    font-weight: $fw;
+    text-transform: uppercase;
+}
+
+@mixin buttons($rounded, $bg) {
+    padding: 13px 34px;
+    border: none;
+    outline: none;
+    background: $bg;
+    border-radius: $rounded;
+}
+
+@mixin revealAnim($speed) {
+    transition: all $speed ease-in-out;
+    animation: opa $speed ease-in-out;
+    @keyframes opa {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.bd-content {
+    /*width: calc(100% - 10rem);*/
+    width: 900px;
+    max-width: 968px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 3.5rem;
+}
+
+
+/*========= START TESTIMONIALS SECTION =========*/
+
+.testimonials {
+    height: 100%;
+    height: 100%;
+    .testimonials__slider {
+        @include displayed(center);
+        width: 900px;
+        .client__card {
+            margin-right: 1.4rem;
+            padding: 0 30px;
+            position: relative;
+            background: $section-bg-light;
+            box-shadow: $ShadowEffect;
+            .quotes {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                i {
+                    color: $first-color;
+                    font-size: 24px;
+                }
+            }
+            .card__content {
+                padding: 1.2rem;
+                .card__description {
+                    @include fonts($Rajdhani, 500, 16px);
+                    color: $color-title;
+                }
+                .client__data {
+                    @include displayed(flex-start);
+                    .client__avatar {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 100%;
+                        margin-right: 1.5rem;
+                        img {
+                            width: 100%;
+                            border-radius: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .client__info {
+                        .client__name {
+                            @include fonts($russOne, 500, 16px);
+                            color: $color-title;
+                            i {
+                                font-size: 18px;
+                                color: $first-color;
+                            }
+                        }
+                        .client__label {
+                            @include fonts($Rajdhani, 500, 16px);
+                            color: #000;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .team__badge {
+        @include displayed(center);
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        padding: 1.5rem;
+        &:hover {
+            background: $section-bg-light;
+        }
+        .team__avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 100%;
+            border: 5px solid $first-color;
+            padding: 3.5px;
+            .avt {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                object-fit: cover;
+                background-position: top;
+            }
+        }
+        .team__info {
+            display: block;
+            .team__name {
+                @include fonts($russOne, 500, 18px);
+                color: $color-title;
+            }
+            .team__label {
+                @include fonts($Rajdhani, 500, 17px);
+                color: $color-title;
+            }
+        }
+    }
+    @media only screen and (max-width:768px) {
+        .title__center {
+            font-size: 30px !important;
+        }
+        .team__slider {
+            width: 600px;
+        }
+        .testimonials__slider {
+            width: 700px;
+        }
+    }
+    @media only screen and (min-width: 600px) {
+        .testimonials__slider>.client__card {
+            width: 100vw;
+        }
+    }
+    @media only screen and (max-width: 576px) {
+        .team__slider,
+        .testimonials__slider {
+            width: 460px;
+            margin: auto;
+        }
+    }
+    @media only screen and (max-width: 360px) {
+        .team__slider {
+            width: 330px !important;
+        }
+        .title__center {
+            font-size: 28px !important;
+        }
+        .testimonials__slider {
+            width: 330px;
+            .card__description {
+                font-size: 15px !important;
+            }
+            .client__info .client__name {
+                font-size: 13px !important;
+            }
+            .client__info .client__label {
+                font-size: 13px !important;
+            }
+            .slick-dots {
+                z-index: 10;
+            }
+        }
+    }
+}
+
+
+/*========= END TESTIMONIALS SECTION =========*/

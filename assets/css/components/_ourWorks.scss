@@ -1,0 +1,164 @@
+/*------ FUNCTIONS FOR DISPLAYING --------*/
+
+@mixin displayed($pos) {
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+}
+
+@mixin fonts($nm, $fw, $fs) {
+    font-family: $nm;
+    font-size: $fs;
+    font-weight: $fw;
+    text-transform: uppercase;
+}
+
+@mixin buttons($rounded, $bg) {
+    padding: 13px 34px;
+    border: none;
+    outline: none;
+    background: $bg;
+    border-radius: $rounded;
+}
+
+@mixin revealAnim($speed) {
+    transition: all $speed ease-in-out;
+    animation: opa $speed ease-in-out;
+    @keyframes opa {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+
+/*======= START OUR WORK SECTION ======++*/
+
+.our_works {
+    /*min-height: 100vh;*/
+    position: relative;
+    svg {
+        position: relative;
+        top: 1.9rem;
+    }
+    .works__container {
+        margin: auto;
+    }
+    .wave-bottom {
+        position: relative;
+        top: -1.9rem;
+    }
+    .works {
+        width: 700px;
+        /*min-width: 330px;*/
+        margin: auto;
+        @include displayed(center);
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-left: 1rem;
+            border-radius: 30px;
+        }
+    }
+    .work_btn {
+        @include buttons(24px, $first-color);
+        padding: 11px 28px !important;
+        margin: 2.4rem auto;
+        @include fonts($Rajdhani, 500, 17px);
+        position: absolute;
+        bottom: 4.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #FFF;
+        text-decoration: none;
+        box-shadow: $ShadowEffect;
+        z-index: 10;
+    }
+    .slick-prev,
+    .slick-next {
+        width: 60px;
+        height: 60px;
+        background: $first-color;
+        border-radius: 100%;
+        border: none;
+        outline: none;
+    }
+    .slick-prev {
+        position: absolute;
+        top: 50%;
+        left: -5rem;
+        /*transform: translate(-50%);*/
+    }
+    .slick-next {
+        position: absolute;
+        top: 50%;
+        right: -5rem;
+        /*transform: translate(-50%);*/
+    }
+    @media only screen and (max-width: 768px) {
+        .title__center {
+            font-size: 30px !important;
+        }
+        .works {
+            width: 600px;
+        }
+        .slick-dots {
+            z-index: 10;
+        }
+        .work_btn {
+            bottom: 28.5rem;
+        }
+    }
+    @media only screen and (max-width: 576px) {
+        .works {
+            width: 460px;
+            margin: auto;
+            .slick-prev {
+                left: -1.5rem;
+                z-index: 10;
+            }
+            .slick-next {
+                right: -1.5rem;
+                z-index: 10;
+            }
+        }
+        .work_btn {
+            bottom: 1.5rem;
+        }
+    }
+    @media only screen and (max-width: 360px) {
+        .works {
+            width: 330px;
+        }
+        .works__container .title__center {
+            font-size: 28px !important;
+        }
+        .slick-next,
+        .slick-prev {
+            width: 45px !important;
+            height: 45px !important;
+        }
+        .slick-next {
+            right: -0.7rem !important;
+        }
+        .slick-prev {
+            left: -0.7rem !important;
+        }
+        .slick-dots {
+            z-index: 10;
+        }
+    }
+}
+
+
+/*======= END OUR WORK SECTION ======++*/
+
+
+/*======= END OUR WORK SECTION ======++*/

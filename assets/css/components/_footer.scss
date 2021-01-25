@@ -1,0 +1,194 @@
+/*------ FUNCTIONS FOR DISPLAYING --------*/
+
+@mixin displayed($pos) {
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+}
+
+@mixin fonts($nm, $fw, $fs) {
+    font-family: $nm;
+    font-size: $fs;
+    font-weight: $fw;
+    text-transform: uppercase;
+}
+
+@mixin buttons($rounded, $bg) {
+    padding: 13px 34px;
+    border: none;
+    outline: none;
+    background: $bg;
+    border-radius: $rounded;
+}
+
+@mixin revealAnim($speed) {
+    transition: all $speed ease-in-out;
+    animation: opa $speed ease-in-out;
+    @keyframes opa {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+
+/*======== START FOOTER =========*/
+
+.footer {
+    position: relative;
+    height: 100%;
+    background: #000;
+    .footer__mbn_intro {
+        padding: 1.8rem;
+        text-align: center;
+        .footer__logo {
+            /*@include fonts($russOne, 500, 21px);
+            color: #FFF;
+            letter-spacing: 0.1rem;
+            margin-bottom: 1.5rem;*/
+            text-decoration: none;
+            max-width: 60px;
+            img {
+                width: 60px;
+                object-fit: cover;
+            }
+        }
+        .footer__desc {
+            @include fonts($Rajdhani, 500, 16px);
+            margin-top: 1.5rem;
+            color: #FFF;
+            line-height: 1.4;
+        }
+        .footer__sci {
+            margin-top: 1.9rem;
+            .footer__list {
+                @include displayed(center);
+                list-style: none;
+                .footer__item {
+                    margin-right: 0.8rem;
+                    text-align: center;
+                    margin-right: 1.5rem;
+                    .footer__link {
+                        text-decoration: none;
+                        color: #FFF;
+                        width: 45px;
+                        height: 45px;
+                        display: block;
+                        background: rgba(255, 255, 255, .1);
+                        border-radius: 100%;
+                        @include displayed(center);
+                        i {
+                            font-size: 22px;
+                            color: #FFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer__community {
+        padding: 1.8rem;
+        margin: auto;
+        text-align: center;
+        .footer__label {
+            @include fonts($russOne, 500, 15px);
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1rem;
+        }
+        .community__list {
+            list-style: none;
+            .ftr__item {
+                margin-bottom: 1.5rem;
+                .ftr__link {
+                    color: #FFF;
+                    font-size: 16px !important;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .footer__about {
+        padding: 1.8rem;
+        margin: auto;
+        text-align: center;
+        .ftr__label {
+            @include fonts($russOne, 500, 15px);
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1rem;
+        }
+        .about__list {
+            list-style: none;
+            .ftr__item {
+                margin-bottom: 1.5rem;
+                .ftr__link {
+                    color: #FFF;
+                    font-size: 16px !important;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .footer__info {
+        padding: 1.8rem;
+        margin: auto;
+        .ftr__label {
+            @include fonts($russOne, 500, 15px);
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1rem;
+            text-align: center;
+        }
+        .info__list {
+            list-style: none;
+            .ftr__item {
+                margin-bottom: 1.5rem;
+                #mail__link {
+                    text-decoration: none;
+                }
+                @include displayed(center);
+                .ftr__icon {
+                    margin-right: 1.4rem;
+                    i {
+                        font-size: 22px;
+                        color: #FFF;
+                    }
+                }
+                .ftr__data {
+                    @include fonts($Rajdhani, 500, 16px);
+                    color: #FFF;
+                    text-transform: lowercase !important;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+    .ftr__copyright {
+        @include fonts($Rajdhani, 500, 15px);
+        color: #FFF;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        i {
+            font-size: 16px;
+            color: hsl(0, 85%, 54%);
+        }
+    }
+    @media only screen and (max-width: 360px) {
+        .ftr__copyright {
+            font-size: 10px !important;
+        }
+    }
+}
+
+
+/*======== END FOOTER =========*/
