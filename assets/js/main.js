@@ -282,7 +282,7 @@ $(".slider-2").slick({
 
 $(".banner__slider").slick({
     infinite: true,
-    dots: true,
+    dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
