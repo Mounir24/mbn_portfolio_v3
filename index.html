@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MBN is a digital communication agency specializing in digital skills through the prism of creative freedom."> 
+    <meta name="description" content="MBN is a digital communication agency specializing in digital skills through the prism of creative freedom.">
     <meta name="keywords" content="MBN, MBN agency, mbn agency, mbn, mbn digital Marketing, mbn marketing, mbn maroc, mbn digital marketing, marketing MBN , mbn agadir, mbn communication and digital, mbn graphic, mbn motiongrapic, mbn technologic, mbn web development, mbn videography, mbn logo type">
     <meta name="author" content="Soufiane boukhnfr">
     <!--Box Icons -->
@@ -33,6 +33,18 @@
     <!-- CSS OWN FILE -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="icon" type="image/png" href="./assets/img/FLOGO.png" sizes="96x96">
+    <!-- Google analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E344Y89TWW"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Dat());
+
+        gtag('config', 'G-E344Y89TWW');
+    </script>
     <title>MBN Agency - Home</title>
 </head>
 
@@ -156,7 +168,8 @@
                     <div class="col-lg-4">
                         <div class="about_us_content2">
                             <p class="data__description">
-                                MBN was founded in an effort to bring better digital solutions to businesses and individuals who may not have the answer to improving their online presence. How to create a website? What about graphic design? Who can manage my social media? The answer is common to all of us: our customers with the will and our team with the expertise.
+                                MBN was founded in an effort to bring better digital solutions to businesses and individuals who may not have the answer to improving their online presence. How to create a website? What about graphic design? Who can manage my social media? The answer
+                                is common to all of us: our customers with the will and our team with the expertise.
                             </p>
                             <a href="work.html" class="button btn__global" data-tilt="">View All Projects</a>
                         </div>
@@ -474,6 +487,26 @@
             </div>
         </footer>
     </main>
+    <div id="paypal-button-container"></div>
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '0.05'
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#paypal-button-container'); // Display payment options on your web page
+    </script>
+
     <!-- jQuery Js (CDN)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Owl Carousel Js -->
