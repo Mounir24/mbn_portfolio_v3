@@ -1,3 +1,9 @@
+// loader Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader-anim');
+    loader.style.display = "none";
+})
+
 /*======== SHOW MENU ========*/
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
