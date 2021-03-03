@@ -305,6 +305,12 @@
 }
 
 @media only screen and (max-width: 360px) {
+  .about__us .img__holder {
+    margin-bottom: 0.5rem;
+  }
+  .about__us .about_us_content2 {
+    margin-top: 0rem;
+  }
   .about__us .title__center {
     font-size: 28px !important;
   }
@@ -431,6 +437,11 @@
   top: 50%;
   right: -5rem;
   /*transform: translate(-50%);*/
+}
+
+.our_works .slick-dots {
+  display: none;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -631,6 +642,7 @@
   border-radius: 100%;
   border: 5px solid #0b7af9;
   padding: 3.5px;
+  margin-bottom: 1.2rem;
 }
 
 .testimonials .team__badge .team__avatar .avt {
@@ -689,7 +701,7 @@
 }
 
 @media only screen and (max-width: 360px) {
-  .testimonials .team__slider {
+  .testimonials .team__slider, .testimonials .client__card {
     width: 330px !important;
   }
   .testimonials .title__center {
@@ -951,6 +963,32 @@
   position: relative;
 }
 
+.work .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFF;
+  z-index: 99;
+}
+
+.work .loader img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .work .work__show__case {
   width: 100%;
   height: 80vh;
@@ -1060,7 +1098,8 @@
   border-radius: 100%;
 }
 
-.work__wrapper .img__wrapper .slick-prev, .work__wrapper .img__wrapper .slick-next {
+.work__wrapper .img__wrapper .slick-prev,
+.work__wrapper .img__wrapper .slick-next {
   width: 60px;
   height: 60px;
   background: #0b7af9;
@@ -1441,6 +1480,36 @@ a {
     }
 }*/
 /*----- SHOWCASE -----*/
+.l-main {
+  position: relative;
+}
+
+.l-main .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFF;
+  z-index: 999;
+}
+
+.l-main .loader img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .home {
   height: 100vh;
   width: 100%;
@@ -1733,56 +1802,44 @@ a {
   }
 }
 
-/*------- STATR HOME BANNER ------*/
-.main__banner {
-  height: 50vh;
-  margin-top: 4.5rem;
-  /*.banner__data {
-        position: absolute;
-        top: 0;
-        left: 10rem;
-        width: 30rem;
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-        transition: all 0.3s ease-in-out;
-        .banner__title {
-            @include fonts($russOne,
-            500,
-            23px);
-            color: #FFF;
-            letter-spacing: 1px;
-        }
-        .banner__desc {
-            @include fonts($Rajdhani,
-            500,
-            17px);
-            color: #FFF;
-        }
-        .banner__btn {
-            @include buttons(24px,
-            $first-color);
-            @include fonts($Rajdhani,
-            500,
-            16px);
-            color: #FFF;
-            text-decoration: none;
-        }
-    }*/
+.partner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main__banner .banner__img {
-  position: relative;
-  width: 800px;
-  height: 300px;
-  max-width: 968px;
-  margin: 0 auto;
+.partner .logo__prtn__wrpr {
+  width: 240px;
+  max-width: 240px;
+  height: 120px;
 }
 
-.main__banner .banner__img img {
+.partner .logo__prtn__wrpr img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  opacity: 0.4;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.partner .logo__prtn__wrpr img:hover {
+  opacity: 1;
+}
+
+.mrgn-tp {
+  margin-top: 4.5rem;
+}
+
+.mrgn-bm {
+  margin-bottom: 4.5rem;
 }
 /*# sourceMappingURL=global.css.map */

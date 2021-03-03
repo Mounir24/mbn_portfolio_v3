@@ -191,6 +191,12 @@
         }
     }
     @media only screen and (max-width: 360px) {
+        .img__holder {
+            margin-bottom: 0.5rem;
+        }
+        .about_us_content2 {
+            margin-top: 0rem;
+        }
         .title__center {
             font-size: 28px !important;
         }

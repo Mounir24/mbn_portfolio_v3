@@ -1,3 +1,9 @@
+// loader Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader-anim');
+    loader.style.display = "none";
+})
+
 /*======== SHOW MENU ========*/
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
@@ -141,32 +147,32 @@ $(".testimonials__slider").slick({
     autoplay: true,
     autoplaySpeed: 2000,
     /*responsive: [{
-              breakpoint: 1024,
-              settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  infinite: true,
-                  dots: true,
-              },
-          },
-          {
-              breakpoint: 666,
-              settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1,
-              },
-          },
-          {
-              breakpoint: 480,
-              settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-              },
-          },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-      ],*/
+                              breakpoint: 1024,
+                              settings: {
+                                  slidesToShow: 3,
+                                  slidesToScroll: 3,
+                                  infinite: true,
+                                  dots: true,
+                              },
+                          },
+                          {
+                              breakpoint: 666,
+                              settings: {
+                                  slidesToShow: 2,
+                                  slidesToScroll: 1,
+                              },
+                          },
+                          {
+                              breakpoint: 480,
+                              settings: {
+                                  slidesToShow: 1,
+                                  slidesToScroll: 1,
+                              },
+                          },
+                          // You can unslick at a given breakpoint now by adding:
+                          // settings: "unslick"
+                          // instead of a settings object
+                      ],*/
 });
 $(".team__slider").slick({
     infinite: true,
@@ -282,7 +288,7 @@ $(".slider-2").slick({
 
 $(".banner__slider").slick({
     infinite: true,
-    dots: true,
+    dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
@@ -340,7 +346,7 @@ $(document).ready(function() {
 
     /*====== CountUp JS =====*/
     /*const c = new CountUp("static__count", 0, 03);
-    c.start();*/
+                    c.start();*/
 });
 
 /*====== SEND MAIL ======*/

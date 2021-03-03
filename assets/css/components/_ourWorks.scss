@@ -102,6 +102,12 @@
         right: -5rem;
         /*transform: translate(-50%);*/
     }
+
+    .slick-dots {
+        display: none;
+        opacity: 0;
+    }
+
     @media only screen and (max-width: 768px) {
         .title__center {
             font-size: 30px !important;

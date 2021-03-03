@@ -124,6 +124,7 @@
             border-radius: 100%;
             border: 5px solid $first-color;
             padding: 3.5px;
+            margin-bottom: 1.2rem;
             .avt {
                 width: 100%;
                 height: 100%;
@@ -168,7 +169,7 @@
         }
     }
     @media only screen and (max-width: 360px) {
-        .team__slider {
+        .team__slider, .client__card {
             width: 330px !important;
         }
         .title__center {
